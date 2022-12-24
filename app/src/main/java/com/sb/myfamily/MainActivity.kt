@@ -18,28 +18,34 @@ class MainActivity : AppCompatActivity() {
 
         binding.bottomNav.setOnItemSelectedListener {
 
-            if (it.itemId == R.id.nav_guard) {
+            when (it.itemId) {
+                R.id.nav_guard -> {
 
-                inflateFrag(GuardFragment.newInstance())
+                    inflateFrag(GuardFragment.newInstance())
 
-            } else if (it.itemId == R.id.nav_home) {
+                }
+                R.id.nav_home -> {
 
-                inflateFrag(HomeFragment.newInstance())
+                    inflateFrag(HomeFragment.newInstance())
 
-            }
-            else if (it.itemId == R.id.nav_dashboard) {
+                }
+                R.id.nav_dashboard -> {
 
-                inflateFrag(DashboardFragment.newInstance())
+                    inflateFrag(DashboardFragment.newInstance())
 
-            }else if (it.itemId == R.id.nav_profile) {
+                }
+                R.id.nav_profile -> {
 
-                inflateFrag(ProfileFragment.newInstance())
+                    inflateFrag(ProfileFragment.newInstance())
+
+                }
 
             }
 
             true
         }
 
+        binding.bottomNav.selectedItemId = R.id.nav_home
 
     }
 
